@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>campaigns.truecash.in | SUN CRYPTO</title>
+
+  <link rel="icon" type="image/png" href="https://ibb.co/x8gyv00t.png">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+
+    * {
+
+      box-sizing: border-box;
+
+      margin: 0;
+
+      padding: 0;
+
+    }
+
+    :root {
+
+      --primary: #2563eb;
+
+      --primary-dark: #1d4ed8;
+
+      --secondary: #06b6d4;
+
+      --success: #10b981;
+
+      --dark: #0f172a;
+
+      --light: #f8fafc;
+
+      --gray: #64748b;
+
+      --card-bg: #ffffff;
+
+      --card-shadow: rgba(0, 0, 0, 0.08);
+
+    }
+
+    body {
+
+      font-family: 'Inter', sans-serif;
+
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+
+      min-height: 100vh;
+
+      display: flex;
+
+      justify-content: center;
+
+      align-items: center;
+
+      padding: 20px;
+
+      position: relative;
+
+      overflow-x: hidden;
+
+    }
+
+    /* Background elements */
+
+    body::before {
+
+      content: "";
+
+      position: absolute;
+
+      top: 0;
+
+      left: 0;
+
+      width: 100%;
+
+      height: 100%;
+
+      background: 
+
+        radial-gradient(circle at 10% 20%, rgba(59, 130, 246, 0.08) 0%, transparent 40%),
+
+        radial-gradient(circle at 90% 80%, rgba(6, 182, 212, 0.08) 0%, transparent 40%);
+
+      z-index: -1;
+
+    }
+
+    /* Floating elements */
+
+    .floating-element {
+
+      position: absolute;
+
+      border-radius: 50%;
+
+      background: rgba(255, 255, 255, 0.03);
+
+      z-index: 0;
+
+    }
+
+    /* Main card container */
+
+    .card-container {
+
+      position: relative;
+
+      max-width: 420px;
+
+      width: 100%;
+
+      z-index: 10;
+
+    }
+
+    .glass-card {
+
+      background: var(--card-bg);
+
+      border-radius: 24px;
+
+      box-shadow: 
+
+        0 12px 32px rgba(0, 0, 0, 0.15),
+
+        0 8px 24px rgba(59, 130, 246, 0.1);
+
+      width: 100%;
+
+      padding: 35px 30px;
+
+      text-align: center;
+
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+      border: 1px solid rgba(203, 213, 225, 0.15);
+
+    }
+
+    .glass-card:hover {
+
+      transform: translateY(-5px);
+
+      box-shadow: 
+
+        0 16px 40px rgba(0, 0, 0, 0.2),
+
+        0 12px 30px rgba(59, 130, 246, 0.15);
+
+    }
+
+    /* Logo and header */
+
+    .logo-container {
+
+      margin-bottom: 20px;
+
+      position: relative;
+
+      display: inline-block;
+
+    }
+
+    .logo-container::before {
+
+      content: "";
+
+      position: absolute;
+
+      top: -10px;
+
+      left: -10px;
+
+      right: -10px;
+
+      bottom: -10px;
+
+      background: linear-gradient(45deg, #3b82f6, #06b6d4);
+
+      border-radius: 50%;
+
+      z-index: -1;
+
+      opacity: 0.15;
+
+    }
+
+    .logo-container img {
+
+      width: 100px;
+
+      height: 100px;
+
+      border-radius: 50%;
+
+      border: 3px solid white;
+
+      background: white;
+
+      object-fit: cover;
+
+      transition: transform 0.3s ease;
+
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+    }
+
+    .logo-container:hover img {
+
+      transform: scale(1.05);
+
+    }
+
+    /* Heading styles */
+
+    h2 {
+
+      font-size: 28px;
+
+      margin-bottom: 6px;
+
+      color: var(--dark);
+
+      font-weight: 700;
+
+      letter-spacing: -0.5px;
+
+      background: linear-gradient(45deg, var(--primary), var(--secondary));
+
+      -webkit-background-clip: text;
+
+      -webkit-text-fill-color: transparent;
+
+      background-clip: text;
+
+    }
+
+    .subtitle {
+
+      font-size: 20px;
+
+      color: var(--success);
+
+      margin-bottom: 12px;
+
+      font-weight: 700;
+
+      display: inline-block;
+
+      padding: 4px 16px;
+
+      border-radius: 20px;
+
+      background: rgba(16, 185, 129, 0.1);
+
+    }
+
+    .refer-code {
+
+      font-size: 15px;
+
+      color: var(--gray);
+
+      margin-bottom: 25px;
+
+      padding: 8px 16px;
+
+      background: rgba(100, 116, 139, 0.05);
+
+      border-radius: 12px;
+
+      display: inline-block;
+
+      font-weight: 500;
+
+    }
+
+    .refer-code strong {
+
+      color: var(--primary);
+
+    }
+
+    /* Form styles */
+
+    .form-group {
+
+      position: relative;
+
+      margin-bottom: 20px;
+
+    }
+
+    .form-group i {
+
+      position: absolute;
+
+      left: 16px;
+
+      top: 50%;
+
+      transform: translateY(-50%);
+
+      color: var(--primary);
+
+      font-size: 18px;
+
+    }
+
+    input {
+
+      width: 100%;
+
+      padding: 16px 16px 16px 48px;
+
+      margin-bottom: 0;
+
+      border: none;
+
+      border-radius: 14px;
+
+      background: rgba(249, 250, 251, 0.95);
+
+      font-size: 16px;
+
+      font-weight: 500;
+
+      color: var(--dark);
+
+      transition: all 0.3s ease;
+
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+
+      border: 1px solid rgba(203, 213, 225, 0.4);
+
+    }
+
+    input::placeholder {
+
+      color: #94a3b8;
+
+      font-weight: 400;
+
+    }
+
+    input:focus {
+
+      outline: none;
+
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+
+      background: rgba(249, 250, 251, 1);
+
+      border-color: rgba(59, 130, 246, 0.6);
+
+    }
+
+    .submit-btn {
+
+      display: inline-block;
+
+      width: 100%;
+
+      padding: 16px;
+
+      background: linear-gradient(to right, var(--primary), var(--secondary));
+
+      color: white;
+
+      font-weight: 600;
+
+      border: none;
+
+      border-radius: 14px;
+
+      text-decoration: none;
+
+      font-size: 17px;
+
+      transition: all 0.3s ease;
+
+      box-shadow: 
+
+        0 4px 15px rgba(59, 130, 246, 0.3),
+
+        0 6px 6px rgba(6, 182, 212, 0.1);
+
+      cursor: pointer;
+
+      position: relative;
+
+      overflow: hidden;
+
+      margin-top: 10px;
+
+    }
+
+    .submit-btn::before {
+
+      content: "";
+
+      position: absolute;
+
+      top: 0;
+
+      left: -100%;
+
+      width: 100%;
+
+      height: 100%;
+
+      background: linear-gradient(
+
+        90deg,
+
+        transparent,
+
+        rgba(255, 255, 255, 0.2),
+
+        transparent
+
+      );
+
+      transition: 0.5s;
+
+    }
+
+    .submit-btn:hover {
+
+      background: linear-gradient(to right, var(--primary-dark), var(--secondary));
+
+      box-shadow: 
+
+        0 6px 20px rgba(59, 130, 246, 0.4),
+
+        0 8px 10px rgba(6, 182, 212, 0.2);
+
+      transform: translateY(-2px);
+
+    }
+
+    .submit-btn:hover::before {
+
+      left: 100%;
+
+    }
+
+    .submit-btn:active {
+
+      transform: translateY(1px);
+
+    }
+
+    /* Instructions */
+
+    .instructions {
+
+      text-align: left;
+
+      font-size: 15px;
+
+      color: var(--dark);
+
+      margin-top: 28px;
+
+      padding: 20px;
+
+      background: rgba(241, 245, 249, 0.5);
+
+      border-radius: 16px;
+
+    }
+
+    .instructions h3 {
+
+      font-size: 18px;
+
+      margin-bottom: 15px;
+
+      color: var(--primary);
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 10px;
+
+    }
+
+    .instructions h3 i {
+
+      color: var(--success);
+
+    }
+
+    .instruction-list {
+
+      list-style: none;
+
+      padding-left: 5px;
+
+    }
+
+    .instruction-list li {
+
+      position: relative;
+
+      padding-left: 30px;
+
+      margin-bottom: 12px;
+
+      line-height: 1.5;
+
+    }
+
+    .instruction-list li:before {
+
+      content: "";
+
+      position: absolute;
+
+      left: 0;
+
+      top: 6px;
+
+      width: 18px;
+
+      height: 18px;
+
+      background: var(--success);
+
+      border-radius: 50%;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      color: white;
+
+      font-size: 10px;
+
+      font-weight: bold;
+
+    }
+
+    .instruction-list li:nth-child(1):before { content: "1"; }
+
+    .instruction-list li:nth-child(2):before { content: "2"; }
+
+    .instruction-list li:nth-child(3):before { content: "3"; }
+
+    .instruction-list li:nth-child(4):before { content: "4"; }
+
+    .instruction-list li strong {
+
+      color: var(--success);
+
+    }
+
+    /* Card footer */
+
+    .card-footer {
+
+      font-size: 14px;
+
+      margin-top: 24px;
+
+      color: var(--gray);
+
+      padding-top: 16px;
+
+      border-top: 1px solid rgba(203, 213, 225, 0.3);
+
+    }
+
+    .card-footer a {
+
+      color: var(--primary);
+
+      text-decoration: none;
+
+      font-weight: 500;
+
+      transition: all 0.2s ease;
+
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 6px;
+
+    }
+
+    .card-footer a:hover {
+
+      color: var(--primary-dark);
+
+      text-decoration: underline;
+
+    }
+
+    /* Animation for the cash reward */
+
+    @keyframes pulse {
+
+      0% { transform: scale(1); }
+
+      50% { transform: scale(1.05); }
+
+      100% { transform: scale(1); }
+
+    }
+
+    .pulse {
+
+      animation: pulse 2s infinite;
+
+    }
+
+    /* Responsive adjustments */
+
+    @media (max-width: 480px) {
+
+      .glass-card {
+
+        padding: 25px 20px;
+
+      }
+
+      
+
+      h2 {
+
+        font-size: 24px;
+
+      }
+
+      
+
+      .subtitle {
+
+        font-size: 18px;
+
+      }
+
+      
+
+      input {
+
+        padding: 14px 14px 14px 44px;
+
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- Floating background elements -->
+
+  <div class="floating-element" style="width: 120px; height: 120px; top: 10%; left: 5%;"></div>
+
+  <div class="floating-element" style="width: 80px; height: 80px; top: 70%; left: 80%;"></div>
+
+  <div class="floating-element" style="width: 60px; height: 60px; top: 20%; left: 85%;"></div>
+
+  <div class="floating-element" style="width: 100px; height: 100px; top: 80%; left: 15%;"></div>
+
+  <div class="card-container">
+
+    <div class="glass-card">
+
+      <div class="logo-container">
+
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg_cKQ30-nWzkoEIomHemcbaVuHRfTYLyP-8dfr_IEpJOCp9mzJbihVudVHi9gZJHbjlsUPPFfMPI0lArSgnk3Gi5SQvo237R4Ohy5G9hJP6fxjRLfIg0bYy_fyewcY7ay63NAjqw2cKrQmD9ebQezaD699us3gqvn3om-ZAf4LAw9-LtpAHFqBabBf9ya8/s3264/1000056390.png" alt="SUN CRYPTO Logo">
+
+      </div>
+
+      
+
+      <h2>SHARE MARKET</h2>
+
+      <p class="subtitle pulse">Get Upto Rs.200  </p>
+
+      <div class="refer-code">Client ID: <strong>EQW2112627</strong></div>
+
+      <form action="https://share.market/refer/jp42t2nd" method="get" target="_blank">
+
+        <div class="form-group">
+
+          <i class="fas fa-wallet"></i>
+
+          <input type="text" name="upi" placeholder="Enter your UPI ID" required>
+
+        </div>
+
+        
+
+        <div class="form-group">
+
+          <i class="fas fa-mobile-alt"></i>
+
+          <input type="tel" name="whatsapp" placeholder="Enter your Mobile Number" required>
+
+        </div>
+
+        
+
+        <button class="submit-btn" type="submit">
+
+          <i class="fas fa-paper-plane"></i> Submit
+
+        </button>
+
+      </form>
+
+      <div class="instructions">
+
+        <h3><i class="fas fa-info-circle"></i> How to avail this campaign?</h3>
+
+        <ul class="instruction-list">
+
+          <li>Enter your UPI ID and Mobile number</li>
+
+          <li>Click on Submit, install and register on the app</li>
+
+          <li>Complete profile and KYC verification</li>
+
+          <li><strong>After KYC, you will receive Rs.200 in 24 Hours.</strong></li>
+
+        </ul>
+
+      </div>
+
+      <div class="card-footer">
+
+        For missing cashback, contact us at <a href="mailto:suncryptoagencyind@gmail.com">
+
+          <i class="fas fa-envelope"></i> suncryptoagencyind@gmail.com
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <script>
+
+    // Add interactive floating elements
+
+    document.addEventListener('DOMContentLoaded', function() {
+
+      // Create additional floating elements
+
+      const container = document.body;
+
+      const elementCount = 12;
+
+      
+
+      for (let i = 0; i < elementCount; i++) {
+
+        const element = document.createElement('div');
+
+        element.classList.add('floating-element');
+
+        
+
+        const size = Math.random() * 60 + 20;
+
+        const posX = Math.random() * 100;
+
+        const posY = Math.random() * 100;
+
+        const opacity = Math.random() * 0.05 + 0.03;
+
+        const hue = Math.random() * 360;
+
+        
+
+        element.style.width = `${size}px`;
+
+        element.style.height = `${size}px`;
+
+        element.style.top = `${posY}%`;
+
+        element.style.left = `${posX}%`;
+
+        element.style.opacity = opacity;
+
+        element.style.background = `radial-gradient(circle, hsla(${hue}, 80%, 70%, ${opacity}) 0%, transparent 70%)`;
+
+        
+
+        container.appendChild(element);
+
+      }
+
+    });
+
+  </script>
+
+</body>
+
+</html>
